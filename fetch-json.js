@@ -7,7 +7,7 @@ const resultPath = path.join(__dirname, 'result');
 const postsPath = path.join(__dirname, 'result', 'posts.json');
 
 
-request = https.get(url, response => {
+let request = https.get(url, response => {
     
     if (response.statusCode !== 200) {
         console.error('Did not get an OK from the server. Code: ${res.statusCode}');
@@ -36,7 +36,7 @@ request = https.get(url, response => {
             
             fs.writeFile(postsPath, body, err => {
                 if (err) {
-                    console.console.error('Error encountered while writing to Posts.json');
+                    console.error('Error encountered while writing to Posts.json');
                 }
                 
             });
